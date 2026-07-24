@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI Dev | Desenvolvimento de Sites, SaaS e Landing Pages</title>
+
+    <!-- Meta Tags SEO -->
+    <meta name="description"
+        content="A MI Dev é uma software house especializada em Desenvolvimento de Sites, Landing Pages de Alta Conversão, Sistemas Web (SaaS) e Automações sob medida. Elevamos o padrão digital do seu negócio.">
+    <meta name="keywords"
+        content="desenvolvimento de sites, landing page alta conversao, criar saas, automacao de processos, software house, agencia de software, mi dev, desenvolvimento web premium">
+    <meta name="author" content="MI Dev">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://midev.com.br/">
+    <meta property="og:title" content="MI Dev | Engenharia de Software e Experiências Digitais Premium">
+    <meta property="og:description"
+        content="Criamos experiências digitais de alta performance que impulsionam o crescimento e as vendas da sua empresa.">
+    <meta property="og:image" content="https://midev.com.br/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="MI Dev | Soluções Digitais sob Medida">
+    <meta property="twitter:description"
+        content="Landing Pages, Sites Institucionais, Sistemas SaaS e Automações de Alta Performance.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080808'/><path d='M25 20 H38 L50 45 L62 20 H75 V80 H63 V45 L50 68 L37 45 V80 H25 Z' fill='%23ff1c24'/></svg>">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CDN Libraries: Lucide Icons, GSAP, ScrollTrigger, Three.js, Lenis -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareHouse",
+      "name": "MI Dev",
+      "image": "imgs/logo_midev.png",
+      "description": "Desenvolvimento de Sites, Landing Pages, Sistemas Web (SaaS) e Automações de Alta Performance.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$$$",
+      "knowsAbout": ["Landing Pages", "Web Applications", "SaaS", "Automations", "UI/UX Design"]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- ==================== CURSOR PERSONALIZADO ==================== -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-follower" id="cursor-follower"></div>
+
+    <!-- ==================== BACKGROUND 3D THREE.JS ==================== -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ==================== LOADER INICIAL ==================== -->
+    <div id="preloader" class="preloader">
+        <div class="loader-content">
+            <div class="logo-svg-wrapper">
+                <img src="imgs/logo_midev.png" alt="MI Dev Logo" id="loader-logo-img" class="loader-logo-img">
+            </div>
+
+            <!-- Animated Progress Bar & Percentage -->
+            <div class="loader-progress-container">
+                <div class="loader-progress-bar" id="loader-bar"></div>
+            </div>
+            <div class="loader-counter">
+                <span id="loader-percent">0</span>%
+            </div>
+            <p class="loader-subtitle">CARREGANDO EXPERIÊNCIA HIGH-TECH...</p>
+        </div>
+    </div>
+
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand" aria-label="MI Dev Início">
+                <svg class="brand-icon-svg" viewBox="0 0 500 400" width="36" height="30">
+                    <path d="M 120 70 L 180 70 L 180 300 L 120 250 Z" fill="url(#redGrad)" />
+                    <path d="M 320 70 L 380 70 L 380 250 L 320 300 Z" fill="url(#redGrad)" />
+                    <path d="M 195 120 L 250 210 L 305 120 L 250 320 Z" fill="url(#redGrad)" />
+                </svg>
+                <span class="brand-name">MI <span>DEV</span></span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#diferenciais" class="nav-link">Diferenciais</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#processo" class="nav-link">Processo</a>
+                <a href="#showcase" class="nav-link">Projetos</a>
+                <a href="#depoimentos" class="nav-link">Avaliações</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#cta-conversion" class="btn btn-primary btn-glow btn-sm magnetic-target">
+                    <span>Solicitar Orçamento</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <button class="mobile-close" id="mobile-close" aria-label="Fechar Menu">
+            <i data-lucide="x"></i>
+        </button>
+        <div class="drawer-links">
+            <a href="#diferenciais" class="drawer-link">Diferenciais</a>
+            <a href="#servicos" class="drawer-link">Serviços</a>
+            <a href="#processo" class="drawer-link">Processo</a>
+            <a href="#showcase" class="drawer-link">Projetos</a>
+            <a href="#depoimentos" class="drawer-link">Avaliações</a>
+            <a href="#cta-conversion" class="btn btn-primary btn-glow drawer-cta magnetic-target">
+                Falar com a MI Dev
+            </a>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+
+        <!-- -------------------- HERO SECTION -------------------- -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-container">
+
+                <div class="hero-badge fade-up">
+                    <span class="badge-dot"></span>
+                    <span class="badge-text">DISPONÍVEL PARA NOVOS PROJETOS</span>
+                </div>
+
+                <h1 class="hero-title" id="hero-title">
+                    Criamos experiências digitais que fazem sua empresa vender mais.
+                </h1>
+
+                <p class="hero-subtitle fade-up" id="hero-subtitle">
+                    Sites modernos, Landing Pages de alta conversão e Sistemas personalizados para empresas que querem
+                    crescer com tecnologia de ponta e alta velocidade.
+                </p>
+
+                <div class="hero-cta-group fade-up">
+                    <a href="#cta-conversion" class="btn btn-primary btn-glow btn-lg magnetic-target">
+                        <span>Solicitar orçamento</span>
+                        <i data-lucide="sparkles"></i>
+                    </a>
+                    <a href="#showcase" class="btn btn-secondary btn-lg magnetic-target">
+                        <span>Ver projetos</span>
+                        <i data-lucide="eye"></i>
+                    </a>
+                </div>
+
+                <!-- Floating Tech Indicators -->
+                <div class="hero-tech-pills fade-up">
+                    <span class="tech-pill"><i data-lucide="zap"></i> Ultra Rápido</span>
+                    <span class="tech-pill"><i data-lucide="shield-check"></i> 100% Seguro</span>
+                    <span class="tech-pill"><i data-lucide="code"></i> Código Limpo</span>
+                    <span class="tech-pill"><i data-lucide="trending-up"></i> Alta Conversão</span>
+                </div>
+
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="mouse-icon">
+                    <div class="wheel"></div>
+                </div>
+                <span>Role para explorar</span>
+            </div>
+        </section>
+
+
+        <!-- -------------------- ESTATÍSTICAS ANIMADAS -------------------- -->
+        <section class="stats-section" id="stats">
+            <div class="container">
+                <div class="stats-grid">
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i data-lucide="folder-check"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="50">+0</span>
+                        </div>
+                        <p class="stat-label">Projetos Entregues</p>
+                        <p class="stat-desc">Aplicações e sites desenvolvidos com excelência</p>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i data-lucide="smartphone"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                        </div>
+                        <p class="stat-label">Responsivo & Fluid</p>
+                        <p class="stat-desc">Perfeito em qualquer tamanho de tela</p>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i data-lucide="gauge"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%+</span>
+                        </div>
+                        <p class="stat-label">Alta Performance</p>
+                        <p class="stat-desc">Notas máximas no Google PageSpeed</p>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon"><i data-lucide="search-check"></i></div>
+                        <div class="stat-number-wrapper">
+                            <span class="stat-prefix">TOP </span><span class="stat-number" data-target="1">0</span>
+                        </div>
+                        <p class="stat-label">SEO Otimizado</p>
+                        <p class="stat-desc">Estruturado para dominar os buscadores</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- -------------------- POR QUE ESCOLHER A MI DEV -------------------- -->
+        <section class="why-section" id="diferenciais">
+            <div class="container">
+
+                <div class="section-header center">
+                    <span class="section-tag">DIFERENCIAIS EXCLUSIVOS</span>
+                    <h2 class="section-title">Por que escolher a <span class="highlight-red">MI Dev</span>?</h2>
+                    <p class="section-subtitle">Não entregamos apenas código; construímos ecossistemas digitais
+                        robustos, velozes e preparados para escalar o seu faturamento.</p>
+                </div>
+
+                <div class="why-grid">
+
+                    <div class="why-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="card-icon-box">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <h3>Alta Velocidade</h3>
+                        <p>Desenvolvimento otimizado de ponta a ponta. Carregamento instantâneo que reduz a taxa de
+                            rejeição e aumenta conversões.</p>
+                    </div>
+
+                    <div class="why-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="card-icon-box">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <h3>Design Premium</h3>
+                        <p>Interfaces exclusivas pensadas no público mais exigente. Sensação de grande software house
+                            global sem parecer template.</p>
+                    </div>
+
+                    <div class="why-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="card-icon-box">
+                            <i data-lucide="line-chart"></i>
+                        </div>
+                        <h3>SEO Estratégico</h3>
+                        <p>Arquitetura da informação e metadados estruturados para que sua empresa seja encontrada e
+                            posicionada no topo do Google.</p>
+                    </div>
+
+                    <div class="why-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="card-icon-box">
+                            <i data-lucide="lock"></i>
+                        </div>
+                        <h3>Segurança Máxima</h3>
+                        <p>Proteção rigorosa contra vulnerabilidades, criptografia de dados e boas práticas
+                            internacionais de segurança.</p>
+                    </div>
+
+                    <div class="why-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="card-icon-box">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <h3>Escalabilidade</h3>
+                        <p>Arquitetura moderna pronta para suportar picos de acessos e o crescimento contínuo de
+                            usuários sem perder performance.</p>
+                    </div>
+
+                    <div class="why-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="card-icon-box">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <h3>Código Limpo</h3>
+                        <p>Sem gambiarras. Código componentizado, padronizado, documentado e extremamente fácil de
+                            manter e atualizar.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- -------------------- SEÇÃO DE SERVIÇOS -------------------- -->
+        <section class="services-section" id="servicos">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-tag">SOLUÇÕES SOB MEDIDA</span>
+                    <h2 class="section-title">Especialidades da <span class="highlight-red">MI Dev</span></h2>
+                    <p class="section-subtitle">Soluções tecnológicas completas para transformar ideias em plataformas
+                        altamente rentáveis.</p>
+                </div>
+
+                <div class="services-grid">
+
+                    <!-- Service 1 -->
+                    <div class="service-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="rocket"></i></div>
+                            <span class="service-number">01</span>
+                        </div>
+                        <h3>Landing Pages de Alta Conversão</h3>
+                        <p>Páginas persuasivas com copywriting estratégico, animações envolventes e gatilhos visuais
+                            desenvolvidos para converter visitantes em clientes pagantes.</p>
+                        <ul class="service-list">
+                            <li><i data-lucide="check-circle-2"></i> Design de alto impacto</li>
+                            <li><i data-lucide="check-circle-2"></i> Integração com CRM & WhatsApp</li>
+                            <li><i data-lucide="check-circle-2"></i> Carregamento em sub-segundos</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="globe"></i></div>
+                            <span class="service-number">02</span>
+                        </div>
+                        <h3>Sites Institucionais</h3>
+                        <p>Presença digital autoritária e elegante. Transmita o mais alto valor da sua marca com
+                            arquitetura moderna e navegação intuitiva.</p>
+                        <ul class="service-list">
+                            <li><i data-lucide="check-circle-2"></i> Painel administrativo intuitivo</li>
+                            <li><i data-lucide="check-circle-2"></i> Blog corporativo otimizado</li>
+                            <li><i data-lucide="check-circle-2"></i> Multi-idioma nativo</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="cpu"></i></div>
+                            <span class="service-number">03</span>
+                        </div>
+                        <h3>Sistemas Web & SaaS</h3>
+                        <p>Engenharia de software sob medida para criar plataformas escaláveis, portais de clientes,
+                            micro-serviços e modelos de assinatura SaaS.</p>
+                        <ul class="service-list">
+                            <li><i data-lucide="check-circle-2"></i> Arquitetura em nuvem (Cloud Native)</li>
+                            <li><i data-lucide="check-circle-2"></i> APIs RESTful e Webhooks</li>
+                            <li><i data-lucide="check-circle-2"></i> Autenticação segura multi-tenant</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="bot"></i></div>
+                            <span class="service-number">04</span>
+                        </div>
+                        <h3>Portfólios modernos</h3>
+                        <p>Transmita máxima credibilidade logo no primeiro clique. Desenvolvemos portfólios dinâmicos,
+                            minimalistas e de alto padrão para destacar seus melhores projetos e atrair clientes
+                            qualificados.</p>
+                        <ul class="service-list">
+                            <li><i data-lucide="check-circle-2"></i> Design minimalista e premium</li>
+                            <li><i data-lucide="check-circle-2"></i> Exibição estratégica de projetos</li>
+                            <li><i data-lucide="check-circle-2"></i> Otimizado para SEO e Google</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-card glass-card tilt-target">
+                        <div class="spotlight"></div>
+                        <div class="service-header">
+                            <div class="service-icon"><i data-lucide="layout-dashboard"></i></div>
+                            <span class="service-number">05</span>
+                        </div>
+                        <h3>Dashboards & Analytics</h3>
+                        <p>Painéis de inteligência de negócios com gráficos interativos em tempo real para tomada de
+                            decisões estratégicas embasadas em dados.</p>
+                        <ul class="service-list">
+                            <li><i data-lucide="check-circle-2"></i> Métricas em tempo real</li>
+                            <li><i data-lucide="check-circle-2"></i> Relatórios exportáveis em PDF/Excel</li>
+                            <li><i data-lucide="check-circle-2"></i> Controle granular de permissões</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- -------------------- PROCESSO DE DESENVOLVIMENTO -------------------- -->
+        <section class="process-section" id="processo">
+            <div class="container">
+
+                <div class="section-header center">
+                    <span class="section-tag">METODOLOGIA ÁGIL</span>
+                    <h2 class="section-title">Como construímos seu projeto</h2>
+                    <p class="section-subtitle">Um fluxo transparente, pontual e sem complicações do primeiro contato
+                        até o lançamento oficial.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line">
+                        <div class="timeline-progress" id="timeline-progress"></div>
+                    </div>
+
+                    <div class="timeline-steps">
+
+                        <!-- Step 1 -->
+                        <div class="timeline-step">
+                            <div class="step-marker">
+                                <span>1</span>
+                            </div>
+                            <div class="step-content glass-card">
+                                <span class="step-phase">FASE 01</span>
+                                <h3>Planejamento & Imersão</h3>
+                                <p>Analisamos seu modelo de negócio, público-alvo, concorrentes e objetivos estratégicos
+                                    para definir o escopo ideal da aplicação.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="timeline-step">
+                            <div class="step-marker">
+                                <span>2</span>
+                            </div>
+                            <div class="step-content glass-card">
+                                <span class="step-phase">FASE 02</span>
+                                <h3>Design UI/UX Protótipo</h3>
+                                <p>Criação do visual exclusivo. Telas com alta fidelidade, protótipos
+                                    interativos e validação completa antes do código.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="timeline-step">
+                            <div class="step-marker">
+                                <span>3</span>
+                            </div>
+                            <div class="step-content glass-card">
+                                <span class="step-phase">FASE 03</span>
+                                <h3>Desenvolvimento & Engenharia</h3>
+                                <p>Codificação limpa utilizando as tecnologias mais avançadas (React, Next.js, Node,
+                                    GSAP, WebGL), garantindo performance máx.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="timeline-step">
+                            <div class="step-marker">
+                                <span>4</span>
+                            </div>
+                            <div class="step-content glass-card">
+                                <span class="step-phase">FASE 04</span>
+                                <h3>Testes Rigorosos & QA</h3>
+                                <p>Testes de estresse, segurança, responsividade em múltiplos dispositivos e validações
+                                    no Google PageSpeed e Lighthouse.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="timeline-step">
+                            <div class="step-marker">
+                                <span>5</span>
+                            </div>
+                            <div class="step-content glass-card">
+                                <span class="step-phase">FASE 05</span>
+                                <h3>Entrega & Suporte Contínuo</h3>
+                                <p>Publicação do projeto em servidor de alta performance, treinamento do seu time e
+                                    acompanhamento pós-lançamento.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- -------------------- DEMONSTRAÇÃO VISUAL / SHOWCASE -------------------- -->
+        <section class="showcase-section" id="showcase">
+            <div class="container">
+
+                <div class="section-header center">
+                    <span class="section-tag">EXCELÊNCIA EM TODOS OS DISPOSITIVOS</span>
+                    <h2 class="section-title">Design fluído e responsivo</h2>
+                    <p class="section-subtitle">Sua marca representada impecavelmente no computador, tablet e celular.
+                    </p>
+                </div>
+
+                <div class="devices-showcase-wrapper" id="devices-wrapper">
+
+                    <!-- Laptop Mockup -->
+                    <div class="device-mockup laptop-mockup">
+                        <div class="laptop-screen">
+                            <div class="screen-header">
+                                <div class="dots"><span></span><span></span><span></span></div>
+                                <div class="address-bar">https://client-dashboard.midev.com.br</div>
+                            </div>
+                            <div class="screen-body">
+                                <div class="mockup-ui">
+                                    <div class="mockup-sidebar">
+                                        <div class="mockup-logo">MI</div>
+                                        <div class="mockup-nav-item active"></div>
+                                        <div class="mockup-nav-item"></div>
+                                        <div class="mockup-nav-item"></div>
+                                    </div>
+                                    <div class="mockup-main">
+                                        <div class="mockup-header-bar"></div>
+                                        <div class="mockup-cards-row">
+                                            <div class="mockup-stat-box red-accent">
+                                                <span class="m-val">R$ 148.900</span>
+                                                <span class="m-lbl">Receita Mensal (+34%)</span>
+                                            </div>
+                                            <div class="mockup-stat-box">
+                                                <span class="m-val">12.450</span>
+                                                <span class="m-lbl">Usuários Ativos</span>
+                                            </div>
+                                            <div class="mockup-stat-box">
+                                                <span class="m-val">99.98%</span>
+                                                <span class="m-lbl">Taxa Uptime</span>
+                                            </div>
+                                        </div>
+                                        <div class="mockup-chart-box">
+                                            <div class="chart-line"></div>
+                                            <div class="chart-bars">
+                                                <div class="c-bar" style="height: 40%"></div>
+                                                <div class="c-bar" style="height: 65%"></div>
+                                                <div class="c-bar" style="height: 50%"></div>
+                                                <div class="c-bar" style="height: 85%"></div>
+                                                <div class="c-bar highlight" style="height: 100%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                    </div>
+
+                    <!-- Tablet Mockup -->
+                    <div class="device-mockup tablet-mockup">
+                        <div class="tablet-screen">
+                            <div class="tablet-header">
+                                <span class="camera"></span>
+                            </div>
+                            <div class="tablet-body">
+                                <div class="t-hero-card">
+                                    <div class="t-line-title"></div>
+                                    <div class="t-line-sub"></div>
+                                    <div class="t-btn"></div>
+                                </div>
+                                <div class="t-grid">
+                                    <div class="t-card"></div>
+                                    <div class="t-card"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Mockup -->
+                    <div class="device-mockup mobile-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-notch"></div>
+                            <div class="phone-body">
+                                <div class="p-brand">MI DEV</div>
+                                <div class="p-hero-title">CONVERSÃO MÁXIMA</div>
+                                <div class="p-cta-btn">SOLICITAR</div>
+                                <div class="p-card"></div>
+                                <div class="p-card"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- -------------------- DEPOIMENTOS -------------------- -->
+        <section class="testimonials-section" id="depoimentos">
+            <div class="container">
+
+                <div class="section-header center">
+                    <span class="section-tag">DEPOIMENTOS REAIS</span>
+                    <h2 class="section-title">O que dizem os nossos parceiros</h2>
+                    <p class="section-subtitle">Empresas que confiaram no trabalho da MI Dev e alcançaram resultados
+                        surpreendentes.</p>
+                </div>
+
+                <div class="testimonials-controls-header">
+                    <div class="testimonials-pagination-dots" id="testimonial-dots"></div>
+                    <div class="testimonials-nav-buttons">
+                        <button class="testimonial-nav-btn prev-btn magnetic-target" id="testimonial-prev"
+                            aria-label="Avaliação anterior">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button class="testimonial-nav-btn next-btn magnetic-target" id="testimonial-next"
+                            aria-label="Próxima avaliação">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="testimonials-slider-wrapper">
+                    <div class="testimonials-slider">
+                        <div class="testimonials-track" id="testimonial-track">
+
+                            <!-- Testimonial 1 -->
+                            <div class="testimonial-card glass-card tilt-target">
+                                <div class="testimonial-card-header">
+                                    <div class="stars">
+                                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                            data-lucide="star"></i><i data-lucide="star"></i>
+                                    </div>
+                                    <span class="expand-badge"><i data-lucide="maximize-2"></i> Clique p/
+                                        expandir</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "A Landing Page que a MI Dev construiu para o lançamento do nosso produto superou
+                                    todas
+                                    as expectativas. Tivemos uma taxa de conversão 3x maior que o mercado!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">RD</div>
+                                    <div class="author-info">
+                                        <h4>Rodrigo Dupont</h4>
+                                        <span>CEO & Founder | FinTech Prime</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="testimonial-card glass-card tilt-target">
+                                <div class="testimonial-card-header">
+                                    <div class="stars">
+                                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                            data-lucide="star"></i><i data-lucide="star"></i>
+                                    </div>
+                                    <span class="expand-badge"><i data-lucide="maximize-2"></i> Clique p/
+                                        expandir</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "A velocidade do site e a fluidez das animações deixaram nossos clientes
+                                    impressionados.
+                                    O profissionalismo e cumprimento de prazos da MI Dev são raros no mercado."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">MS</div>
+                                    <div class="author-info">
+                                        <h4>Mariana Silva</h4>
+                                        <span>Diretora de Marketing | Nexo Digital</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="testimonial-card glass-card tilt-target">
+                                <div class="testimonial-card-header">
+                                    <div class="stars">
+                                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                            data-lucide="star"></i><i data-lucide="star"></i>
+                                    </div>
+                                    <span class="expand-badge"><i data-lucide="maximize-2"></i> Clique p/
+                                        expandir</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Automatizaram todo o nosso fluxo de atendimento e integração de Leads. Reduzimos o
+                                    tempo de resposta aos clientes de 2 horas para 15 segundos."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">GB</div>
+                                    <div class="author-info">
+                                        <h4>Gabriel Barbosa</h4>
+                                        <span>Head de Operações | Veloce SaaS</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 4 -->
+                            <div class="testimonial-card glass-card tilt-target">
+                                <div class="testimonial-card-header">
+                                    <div class="stars">
+                                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                            data-lucide="star"></i><i data-lucide="star"></i>
+                                    </div>
+                                    <span class="expand-badge"><i data-lucide="maximize-2"></i> Clique p/
+                                        expandir</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "O design da nossa plataforma SaaS ficou parecendo um produto do ecossistema Apple
+                                    ou
+                                    Stripe. Excelente senso estético e código impecável!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">CS</div>
+                                    <div class="author-info">
+                                        <h4>Camila Siqueira</h4>
+                                        <span>Co-founder | CloudData</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 5 -->
+                            <div class="testimonial-card glass-card tilt-target">
+                                <div class="testimonial-card-header">
+                                    <div class="stars">
+                                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                            data-lucide="star"></i><i data-lucide="star"></i>
+                                    </div>
+                                    <span class="expand-badge"><i data-lucide="maximize-2"></i> Clique p/
+                                        expandir</span>
+                                </div>
+                                <p class="testimonial-text">
+                                    "O suporte pós-lançamento da MI Dev e o cuidado com a otimização SEO garantiram que
+                                    fôssemos para a primeira página no Google em poucas semanas."
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">LP</div>
+                                    <div class="author-info">
+                                        <h4>Lucas Prado</h4>
+                                        <span>Founder & CTO | TechForge</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- -------------------- CTA PRINCIPAL / CONVERSÃO FINAL -------------------- -->
+        <section class="cta-conversion-section" id="cta-conversion">
+            <div class="container">
+                <div class="cta-box glass-card glowing-border">
+                    <div class="cta-spotlight"></div>
+
+                    <div class="cta-badge">
+                        <i data-lucide="sparkles"></i>
+                        <span>PROJETO EXCLUSIVO</span>
+                    </div>
+
+                    <h2 class="cta-headline">
+                        Vamos construir o próximo projeto da sua <span class="highlight-red">empresa?</span>
+                    </h2>
+
+                    <p class="cta-description">
+                        Entre em contato diretamente com nossos especialistas. Analisamos suas necessidades e entregamos
+                        um orçamento personalizado com proposta de valor clara em até 24 horas.
+                    </p>
+
+                    <!-- GIGANTE BOTÃO PRINCIPAL DE CONVERSÃO INSTAGRAM -->
+                    <div class="giant-cta-wrapper">
+                        <a href="https://ig.me/m/mi.development" target="_blank" rel="noopener noreferrer"
+                            class="giant-instagram-btn magnetic-target" id="btn-instagram-main">
+                            <div class="btn-glow-layer"></div>
+                            <div class="btn-content">
+                                <div class="instagram-icon-box">
+                                    <i data-lucide="instagram"></i>
+                                </div>
+                                <div class="btn-text-group">
+                                    <span class="btn-main-text">Falar com a MI Dev pelo Instagram</span>
+                                    <span class="btn-sub-text">Atendimento rápido & Orçamento direto no direct</span>
+                                </div>
+                                <div class="btn-arrow-box">
+                                    <i data-lucide="arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="cta-trust-items">
+                        <span><i data-lucide="check"></i> Resposta em até 2h</span>
+                        <span><i data-lucide="check"></i> Atendimento com Desenvolvedor Senior</span>
+                        <span><i data-lucide="check"></i> Sem compromisso</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-brand">
+                        <svg class="brand-icon-svg" viewBox="0 0 500 400" width="36" height="30">
+                            <path d="M 120 70 L 180 70 L 180 300 L 120 250 Z" fill="url(#redGrad)" />
+                            <path d="M 320 70 L 380 70 L 380 250 L 320 300 Z" fill="url(#redGrad)" />
+                            <path d="M 195 120 L 250 210 L 305 120 L 250 320 Z" fill="url(#redGrad)" />
+                        </svg>
+                        <span class="brand-name">MI <span>DEV</span></span>
+                    </a>
+                    <p class="footer-tagline">
+                        Engenharia de software, design premium e estratégias de conversão para empresas que exigem
+                        excelência.
+                    </p>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Navegação</h4>
+                        <a href="#diferenciais">Diferenciais</a>
+                        <a href="#servicos">Serviços</a>
+                        <a href="#processo">Processo</a>
+                        <a href="#showcase">Projetos</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contato</h4>
+                        <a href="https://ig.me/m/mi.development" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="instagram"></i> Instagram (@mi.development)
+                        </a>
+                        <a href="mailto:contato@midev.com.br">
+                            <i data-lucide="mail"></i> contato@midev.com.br
+                        </a>
+                        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">
+                            <i data-lucide="message-square"></i> WhatsApp Oficial
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 MI Dev. Todos os direitos reservados. Projetado & Desenvolvido com padrão internacional.
+                </p>
+                <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+                    <span>Voltar ao topo</span>
+                    <i data-lucide="arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BOTÃO FLUTUANTE INSTAGRAM ==================== -->
+    <a href="https://ig.me/m/mi.development" target="_blank" rel="noopener noreferrer"
+        class="floating-instagram-btn magnetic-target" aria-label="Falar pelo Instagram">
+        <div class="floating-glow"></div>
+        <i data-lucide="instagram"></i>
+        <span class="floating-tooltip">Solicitar Orçamento</span>
+    </a>
+
+    <!-- ==================== MODAL DE AVALIAÇÃO EXPANDIDA ==================== -->
+    <div class="testimonial-modal-backdrop" id="testimonial-modal" aria-hidden="true">
+        <div class="testimonial-modal-card glass-card glowing-border">
+            <button class="modal-close-btn magnetic-target" id="modal-close" aria-label="Fechar modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-badge-quote">
+                <i data-lucide="quote"></i>
+            </div>
+            <div class="modal-stars" id="modal-stars"></div>
+            <p class="modal-testimonial-text" id="modal-text"></p>
+            <div class="modal-testimonial-author">
+                <div class="modal-author-avatar" id="modal-avatar"></div>
+                <div class="modal-author-info">
+                    <h4 id="modal-name"></h4>
+                    <span id="modal-role"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Script -->
+    <script src="scripts.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
